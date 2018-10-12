@@ -12,8 +12,6 @@
 		3AA3841121711751005A7286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA3840F21711751005A7286 /* Main.storyboard */; };
 		3AA3841321711751005A7286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA3841221711751005A7286 /* Assets.xcassets */; };
 		3AA3841621711751005A7286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA3841421711751005A7286 /* LaunchScreen.storyboard */; };
-		3AA3842121711752005A7286 /* P3_FiestaDeLaMediaNaranjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA3842021711752005A7286 /* P3_FiestaDeLaMediaNaranjaTests.swift */; };
-		3AA3842C21711752005A7286 /* P3_FiestaDeLaMediaNaranjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA3842B21711752005A7286 /* P3_FiestaDeLaMediaNaranjaUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +40,7 @@
 		3AA3841521711751005A7286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AA3841721711751005A7286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA3841C21711752005A7286 /* P3-FiestaDeLaMediaNaranjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P3-FiestaDeLaMediaNaranjaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA3842021711752005A7286 /* P3_FiestaDeLaMediaNaranjaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P3_FiestaDeLaMediaNaranjaTests.swift; sourceTree = "<group>"; };
-		3AA3842221711752005A7286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA3842721711752005A7286 /* P3-FiestaDeLaMediaNaranjaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P3-FiestaDeLaMediaNaranjaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA3842B21711752005A7286 /* P3_FiestaDeLaMediaNaranjaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P3_FiestaDeLaMediaNaranjaUITests.swift; sourceTree = "<group>"; };
-		3AA3842D21711752005A7286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				3AA3840A21711751005A7286 /* P3-FiestaDeLaMediaNaranja */,
-				3AA3841F21711752005A7286 /* P3-FiestaDeLaMediaNaranjaTests */,
-				3AA3842A21711752005A7286 /* P3-FiestaDeLaMediaNaranjaUITests */,
 				3AA3840921711751005A7286 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,24 +97,6 @@
 				3AA3841721711751005A7286 /* Info.plist */,
 			);
 			path = "P3-FiestaDeLaMediaNaranja";
-			sourceTree = "<group>";
-		};
-		3AA3841F21711752005A7286 /* P3-FiestaDeLaMediaNaranjaTests */ = {
-			isa = PBXGroup;
-			children = (
-				3AA3842021711752005A7286 /* P3_FiestaDeLaMediaNaranjaTests.swift */,
-				3AA3842221711752005A7286 /* Info.plist */,
-			);
-			path = "P3-FiestaDeLaMediaNaranjaTests";
-			sourceTree = "<group>";
-		};
-		3AA3842A21711752005A7286 /* P3-FiestaDeLaMediaNaranjaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3AA3842B21711752005A7286 /* P3_FiestaDeLaMediaNaranjaUITests.swift */,
-				3AA3842D21711752005A7286 /* Info.plist */,
-			);
-			path = "P3-FiestaDeLaMediaNaranjaUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +242,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AA3842121711752005A7286 /* P3_FiestaDeLaMediaNaranjaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AA3842C21711752005A7286 /* P3_FiestaDeLaMediaNaranjaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

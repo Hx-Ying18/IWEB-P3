@@ -79,11 +79,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fwc-QP-419">
-                                        <rect key="frame" x="27.5" y="31.5" width="320" height="582.5"/>
+                                        <rect key="frame" x="27.5" y="31.5" width="320" height="552.5"/>
                                         <date key="date" timeIntervalSinceReferenceDate="561068526.03118002">
                                             <!--2018-10-12 20:22:06 +0000-->
                                         </date>
                                     </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw5-hJ-BBo">
+                                        <rect key="frame" x="160.5" y="584" width="54" height="30"/>
+                                        <state key="normal" title="Aceptar"/>
+                                        <connections>
+                                            <segue destination="7Iv-xj-Ibu" kind="presentation" id="qOz-SY-Ohg"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juj-70-ux8">
                                         <rect key="frame" x="163.5" y="614" width="48" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>

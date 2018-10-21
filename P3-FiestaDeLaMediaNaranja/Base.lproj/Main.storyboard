@@ -86,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="birthdayLabel" destination="3cf-Ge-pgj" id="iYT-8J-IhE"/>
+                        <outlet property="crushDateLabel" destination="Paw-uB-mb8" id="Vcd-H8-UvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,7 +176,7 @@
                                         <rect key="frame" x="0.0" y="584" width="375" height="30"/>
                                         <state key="normal" title="Aceptar"/>
                                         <connections>
-                                            <segue destination="AuC-S3-Lbz" kind="unwind" identifier="sb ok" unwindAction="goHome:" id="rkA-oJ-MoL"/>
+                                            <segue destination="AuC-S3-Lbz" kind="unwind" identifier="sc ok" unwindAction="goHome:" id="rkA-oJ-MoL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0T-as-T0H">
@@ -183,7 +184,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Volver"/>
                                         <connections>
-                                            <segue destination="QGp-Lh-1df" kind="unwind" identifier="sb cancel" unwindAction="goHome:" id="H97-ZG-Y0k"/>
+                                            <segue destination="QGp-Lh-1df" kind="unwind" identifier="sc cancel" unwindAction="goHome:" id="H97-ZG-Y0k"/>
                                         </connections>
                                     </button>
                                 </subviews>

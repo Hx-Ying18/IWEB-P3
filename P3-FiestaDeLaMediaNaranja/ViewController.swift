@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     var myBirthday: Date?
+    var myCrushDate: Date?
     
     @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var crushDateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,24 @@ class ViewController: UIViewController {
         if segue.identifier == "sb cancel"{
             
         }
+        if segue.identifier == "sc ok" {
+            if let cvc = segue.source as? CrushDateViewController{
+                // You cannot crush in the future
+                if cvc.crushDate > Date(){
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de enamoramiento en el futuro")}))
+                    present(alert, animated: true)
+                } else {
+                    //If  the date introduced is valid it is tored
+                    myCrushDate = cvc.crushDate
+                    updateCL()
+                }
+            }
+        }
+        if segue.identifier == "sc cancel"{
+            
+        }
+        
         
     }
     
@@ -67,6 +87,23 @@ class ViewController: UIViewController {
             birthdayLabel.text = "Nací el \(t)"
         }else{
             birthdayLabel.text = "No sé cuándo nací"
+        }
+    }
+    
+    //Update crushDateLabel
+    func updateCL(){
+    
+        if let cd = myCrushDate{
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            dateFormatter.locale = Locale(identifier: "es_ES")
+            let t = dateFormatter.string(from: cd)
+            crushDateLabel.text = "Me enamoré el \(t)"
+        }else{
+            crushDateLabel.text = "No sé cuándo me enamoré"
         }
     }
 }

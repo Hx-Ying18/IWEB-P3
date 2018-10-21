@@ -119,6 +119,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcm-iT-vSw">
                                         <rect key="frame" x="160.5" y="584" width="54" height="30"/>
                                         <state key="normal" title="Aceptar"/>
+                                        <connections>
+                                            <segue destination="AuC-S3-Lbz" kind="unwind" identifier="sb ok" unwindAction="goHome:" id="7oW-bL-Xtg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juj-70-ux8">
                                         <rect key="frame" x="163.5" y="614" width="48" height="33"/>

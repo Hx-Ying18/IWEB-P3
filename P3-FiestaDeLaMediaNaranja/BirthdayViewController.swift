@@ -1,14 +1,14 @@
 //
-//  FechaNacimientoSelectorViewController.swift
+//  BirthdayViewController.swift
 //  P3-FiestaDeLaMediaNaranja
 //
-//  Created by Adrian on 18/10/2018.
+//  Created by Adrian on 21/10/2018.
 //  Copyright © 2018 Adrian. All rights reserved.
 //
 
 import UIKit
 
-class FechaNacimientoSelectorViewController: UIViewController {
+class BirthdayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

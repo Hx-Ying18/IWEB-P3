@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         updatePL()
+        partyDateLabel.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,11 +77,10 @@ class ViewController: UIViewController {
                         alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                         present(alert, animated: true)
                     }
-                    else{
-                        //If  the date introduced is valid it is tored
-                        myCrushDate = cvc.crushDate
-                        updateCL()
-                    }
+                } else {
+                    //If  the date introduced is valid it is tored
+                    myCrushDate = cvc.crushDate
+                    updateCL()
                 }
             }
         }

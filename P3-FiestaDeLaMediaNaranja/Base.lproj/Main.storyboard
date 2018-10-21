@@ -87,6 +87,7 @@
                     <connections>
                         <outlet property="birthdayLabel" destination="3cf-Ge-pgj" id="iYT-8J-IhE"/>
                         <outlet property="crushDateLabel" destination="Paw-uB-mb8" id="Vcd-H8-UvQ"/>
+                        <outlet property="partyDateLabel" destination="v3V-gy-70w" id="8bX-AG-yfn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

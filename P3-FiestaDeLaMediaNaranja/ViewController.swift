@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var crushDateLabel: UILabel!
+    @IBOutlet weak var partyDateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        updatePL()
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,6 +115,22 @@ class ViewController: UIViewController {
         }else{
             crushDateLabel.text = "No sé cuándo me enamoré"
         }
+    }
+    
+    //If tehre has been introduced the dates it show the party date
+    func updatePL() {
+        if (myBirthday != nil) && (myCrushDate != nil){
+            let calendar = Calendar.current
+            let startingDate = calendar.startOfDay(for: myBirthday!)
+            let untilDate = calendar.startOfDay(for: myCrushDate!)
+            let days = Set<Calendar.Component>([.day])
+            let numberOfDays = calendar.dateComponents(days, from: startingDate, to: untilDate)
+            let dateMN = calendar.date(byAdding: .day, value: numberOfDays.day!, to: myCrushDate!)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-YYYY"
+            partyDateLabel.text = "Apunta este día: " + dateFormatter.string(from: dateMN!)
+        }
+        
     }
 }
 

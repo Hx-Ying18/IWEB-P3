@@ -64,9 +64,9 @@ class ViewController: UIViewController {
             
             dateFormatter.locale = Locale(identifier: "es_ES")
             let t = dateFormatter.string(from: bd)
-            birthdayLabel.text = "Nací \(t)"
+            birthdayLabel.text = "Nací el \(t)"
         }else{
-            birthdayLabel.text = "No se cuando naci"
+            birthdayLabel.text = "No sé cuándo nací"
         }
     }
 }

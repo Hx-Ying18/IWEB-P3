@@ -56,10 +56,18 @@ class ViewController: UIViewController {
             if let cvc = segue.source as? CrushDateViewController{
                 // You cannot crush in the future
                 if cvc.crushDate > Date(){
-                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de enamoramiento en el futuro")}))
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento forma parte del futuro", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                     present(alert, animated: true)
-                } else {
+                }
+                
+                // You cannot crush before been born
+                if (myBirthday! > myCrushDate!){
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                    present(alert, animated: true)
+                }
+                else{
                     //If  the date introduced is valid it is tored
                     myCrushDate = cvc.crushDate
                     updateCL()

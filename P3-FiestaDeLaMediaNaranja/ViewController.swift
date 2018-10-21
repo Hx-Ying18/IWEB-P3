@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         
         updatePL()
         partyDateLabel.setNeedsDisplay()
+        birthdayLabel.setNeedsDisplay()
+        crushDateLabel.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,15 +48,16 @@ class ViewController: UIViewController {
                 }
                 // You cannot crush before been born
                 if (myCrushDate != nil) { // The crushDate previously stored
+                    //print(bvc.birthday > myCrushDate!)
                     if (bvc.birthday > myCrushDate!){ // Compared with the curent crush date
                         let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                         present(alert, animated: true)
                     }
                 } else {
-                //If  the date introduced is valid it is stored
-                myBirthday = bvc.birthday
-                updateBL()
+                    //If  the date introduced is valid it is stored
+                    myBirthday = bvc.birthday
+                    updateBL()
                 }
             }
         }

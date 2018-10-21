@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var myBirthday: Date?
+    
+    @IBOutlet weak var birthdayLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,10 +31,43 @@ class ViewController: UIViewController {
         
     }
     
-    
+    // Depending on the segue identifier, either the date on the label or not
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
-        // only con IBAction appear in the graphic
+        if segue.identifier == "sb ok"{
+            if let bvc = segue.source as? BirthdayViewController{
+                // You cannnot be born in the future
+                if bvc.birthday > Date(){
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default))
+                    present(alert, animated: true)
+                    } else {
+                    //If  the date introduced is valid it is tored
+                    myBirthday = bvc.birthday
+                    updateBL()
+                }
+            }
+        }
+        if segue.identifier == "sb cancel"{
+            
+        }
+        
     }
-
+    
+    //Update bitrhdayLabel
+    func updateBL(){
+        
+        if let bd = myBirthday{
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            dateFormatter.locale = Locale(identifier: "es_ES")
+            let t = dateFormatter.string(from: bd)
+            birthdayLabel.text = "Nací \(t)"
+        }else{
+            birthdayLabel.text = "No se cuando naci"
+        }
+    }
 }
 

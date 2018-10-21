@@ -42,10 +42,18 @@ class ViewController: UIViewController {
                     let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
                     present(alert, animated: true)
-                    } else {
-                    //If  the date introduced is valid it is tored
-                    myBirthday = bvc.birthday
-                    updateBL()
+                }
+                // You cannot crush before been born
+                if (myCrushDate != nil) { // The crushDate previously stored
+                    if (bvc.birthday > myCrushDate!){ // Compared with the curent crush date
+                        let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                        present(alert, animated: true)
+                    }
+                } else {
+                //If  the date introduced is valid it is stored
+                myBirthday = bvc.birthday
+                updateBL()
                 }
             }
         }
@@ -62,8 +70,8 @@ class ViewController: UIViewController {
                 }
                 
                 // You cannot crush before been born
-                if (myBirthday != nil) && (myCrushDate != nil){
-                    if (myBirthday! > myCrushDate!){
+                if (myBirthday != nil) { // The birthday previously stored
+                    if (myBirthday! > cvc.crushDate){ // COmpared with the curent crush date
                         let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                         present(alert, animated: true)

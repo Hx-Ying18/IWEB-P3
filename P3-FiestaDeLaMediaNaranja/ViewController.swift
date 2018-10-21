@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Prepare for segue so to store the value that give the datepicker
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
         // only con IBAction appear in the graphic
     }

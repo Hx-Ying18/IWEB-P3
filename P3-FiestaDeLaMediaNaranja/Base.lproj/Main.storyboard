@@ -115,13 +115,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mw5-hJ-BBo">
                                         <rect key="frame" x="160.5" y="584" width="54" height="30"/>
                                         <state key="normal" title="Aceptar"/>
+                                        <connections>
+                                            <segue destination="AuC-S3-Lbz" kind="unwind" identifier="sb ok" unwindAction="goHome:" id="rkA-oJ-MoL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="300" verticalHuggingPriority="300" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juj-70-ux8">
                                         <rect key="frame" x="163.5" y="614" width="48" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Volver"/>
                                         <connections>
-                                            <segue destination="AuC-S3-Lbz" kind="unwind" unwindAction="goHome:" id="vaT-eY-vgc"/>
+                                            <segue destination="AuC-S3-Lbz" kind="unwind" identifier="sb cancel" unwindAction="goHome:" id="eFh-lo-hmM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,6 +139,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="geq-x8-Px5"/>
                     </view>
+                    <connections>
+                        <outlet property="birthdayPicker" destination="fwc-QP-419" id="QEg-XD-tYh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qP6-mx-eML" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AuC-S3-Lbz" userLabel="Exit" sceneMemberID="exit"/>

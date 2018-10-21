@@ -10,10 +10,17 @@ import UIKit
 
 class BirthdayViewController: UIViewController {
 
+    // It is initialized with the current value
+    var birthday: Date = Date()
+    
+    @IBOutlet weak var birthdayPicker: UIDatePicker!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // By default is loaded this value in datePicker
+        birthdayPicker.date = birthday
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +29,24 @@ class BirthdayViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // If it is selector birthday ok (sb ok), stores the value in birthday. If not do nothing
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "sb ok"{
+            birthday = birthdayPicker.date
+        }
+        if segue.identifier == "sb cancel"{
+            // Do nothing, but dismiss
+        
+        }
+        
+        
     }
-    */
+    
+    
+    
 
 }

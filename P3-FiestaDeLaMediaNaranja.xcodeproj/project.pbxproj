@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A499BFE217CA88E0036A238 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A499BFD217CA88E0036A238 /* BirthdayViewController.swift */; };
+		3A499C00217CD7E50036A238 /* CrushDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A499BFF217CD7E50036A238 /* CrushDateViewController.swift */; };
 		3AA3840C21711751005A7286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA3840B21711751005A7286 /* AppDelegate.swift */; };
 		3AA3840E21711751005A7286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA3840D21711751005A7286 /* ViewController.swift */; };
 		3AA3841121711751005A7286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA3840F21711751005A7286 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		3A499BFD217CA88E0036A238 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		3A499BFF217CD7E50036A238 /* CrushDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrushDateViewController.swift; sourceTree = "<group>"; };
 		3AA3840821711751005A7286 /* P3-FiestaDeLaMediaNaranja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "P3-FiestaDeLaMediaNaranja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA3840B21711751005A7286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA3840D21711751005A7286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				3AA3840B21711751005A7286 /* AppDelegate.swift */,
 				3AA3840D21711751005A7286 /* ViewController.swift */,
 				3A499BFD217CA88E0036A238 /* BirthdayViewController.swift */,
+				3A499BFF217CD7E50036A238 /* CrushDateViewController.swift */,
 				3AA3840F21711751005A7286 /* Main.storyboard */,
 				3AA3841221711751005A7286 /* Assets.xcassets */,
 				3AA3841421711751005A7286 /* LaunchScreen.storyboard */,
@@ -238,6 +241,7 @@
 			files = (
 				3AA3840E21711751005A7286 /* ViewController.swift in Sources */,
 				3AA3840C21711751005A7286 /* AppDelegate.swift in Sources */,
+				3A499C00217CD7E50036A238 /* CrushDateViewController.swift in Sources */,
 				3A499BFE217CA88E0036A238 /* BirthdayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

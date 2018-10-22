@@ -32,10 +32,10 @@ class CrushDateViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier=="sb ok"{
+        if segue.identifier=="sc ok"{
             crushDate = crushDatePicker.date
         }
-        if segue.identifier=="sb cancel"{
+        if segue.identifier=="sc cancel"{
             
         }
     }

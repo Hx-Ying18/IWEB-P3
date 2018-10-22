@@ -36,13 +36,13 @@ class ViewController: UIViewController {
         // If myBirthday is not nil, it gives its value to the segue
         if segue.identifier=="Select birthday"{
             if(myBirthday != nil ){
-                guard let bvc = segue.source as? BirthdayViewController else { return }
+                guard let bvc = segue.destination as? BirthdayViewController else { return }
                 bvc.birthday = myBirthday!
             }
         }
         if segue.identifier=="Select crush date"{
             if(myCrushDate != nil ){
-                guard let cvc = segue.source as? CrushDateViewController else { return }
+                guard let cvc = segue.destination as? CrushDateViewController else { return }
                 cvc.crushDate = myCrushDate!
             }
         }
@@ -50,6 +50,7 @@ class ViewController: UIViewController {
     
     // Depending on the segue identifier, either the date on the label or not
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
+        
         if segue.identifier == "sb ok"{
             if let bvc = segue.source as? BirthdayViewController{
                 // You cannnot be born in the future
@@ -65,9 +66,14 @@ class ViewController: UIViewController {
                         let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                         present(alert, animated: true)
+                    } else {
+                        // The parameters can be well introduced
+                        // If  the date introduced is valid it is stored
+                        myBirthday = bvc.birthday
+                        updateBL()
                     }
                 } else {
-                    //If  the date introduced is valid it is stored
+                    // If  the date introduced is valid it is stored
                     myBirthday = bvc.birthday
                     updateBL()
                 }
@@ -91,6 +97,11 @@ class ViewController: UIViewController {
                         let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                         present(alert, animated: true)
+                    } else {
+                        // Param can be well introduced
+                        //If  the date introduced is valid it is stored
+                        myCrushDate = cvc.crushDate
+                        updateCL()
                     }
                 } else {
                     //If  the date introduced is valid it is tored

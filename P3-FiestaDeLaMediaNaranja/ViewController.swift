@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     
     // Depending on the segue identifier, either the date on the label or not
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
-        
+        updatePL()
         if segue.identifier == "sb ok"{
             if let bvc = segue.source as? BirthdayViewController{
                 // You cannnot be born in the future
@@ -71,11 +71,13 @@ class ViewController: UIViewController {
                         // If  the date introduced is valid it is stored
                         myBirthday = bvc.birthday
                         updateBL()
+                        updatePL()
                     }
                 } else {
                     // If  the date introduced is valid it is stored
                     myBirthday = bvc.birthday
                     updateBL()
+                    updatePL()
                 }
             }
         }
@@ -102,11 +104,13 @@ class ViewController: UIViewController {
                         //If  the date introduced is valid it is stored
                         myCrushDate = cvc.crushDate
                         updateCL()
+                        updatePL()
                     }
                 } else {
                     //If  the date introduced is valid it is tored
                     myCrushDate = cvc.crushDate
                     updateCL()
+                    updatePL()
                 }
             }
         }
@@ -153,6 +157,7 @@ class ViewController: UIViewController {
     
     //If tehre has been introduced the dates it show the party date
     func updatePL() {
+        // print((myBirthday != nil) && (myCrushDate != nil))
         if (myBirthday != nil) && (myCrushDate != nil){
             let calendar = Calendar.current
             let startingDate = calendar.startOfDay(for: myBirthday!)

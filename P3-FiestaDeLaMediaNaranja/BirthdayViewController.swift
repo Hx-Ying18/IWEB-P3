@@ -15,7 +15,6 @@ class BirthdayViewController: UIViewController {
     
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,9 +22,16 @@ class BirthdayViewController: UIViewController {
         birthdayPicker.date = birthday
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onOKTapped(_ sender: UIButton) {
+        // You cannnot be born in the future
+        if birthday > Date(){
+            let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
+            present(alert, animated: true)
+        }else{
+            self.performSegue(withIdentifier:"sb ok", sender: nil)
+        }
+            
     }
     
 
@@ -37,6 +43,29 @@ class BirthdayViewController: UIViewController {
         
         if segue.identifier == "sb ok"{
             birthday = birthdayPicker.date
+            
+//                // You cannot crush before been born
+//                if (myCrushDate != nil) { // The crushDate previously stored
+//                    //print(bvc.birthday > myCrushDate!)
+//                    if (bvc.birthday > myCrushDate!){ // Compared with the curent crush date
+//                        let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+//                        present(alert, animated: true)
+//                    } else {
+//                        // The parameters can be well introduced
+//                        // If  the date introduced is valid it is stored
+//                        myBirthday = bvc.birthday
+//                        updateBL()
+//                        updatePL()
+//                    }
+//                } else {
+//                    // If  the date introduced is valid it is stored
+//                    myBirthday = bvc.birthday
+//                    updateBL()
+//                    updatePL()
+//                }
+            
+            
         }
         if segue.identifier == "sb cancel"{
             // Do nothing, but dismiss

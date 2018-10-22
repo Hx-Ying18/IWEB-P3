@@ -50,37 +50,37 @@ class ViewController: UIViewController {
     
     // Depending on the segue identifier, either the date on the label or not
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
-        updatePL()
-        if segue.identifier == "sb ok"{
-            if let bvc = segue.source as? BirthdayViewController{
-                // You cannnot be born in the future
-                if bvc.birthday > Date(){
-                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
-                    present(alert, animated: true)
-                }
-                // You cannot crush before been born
-                if (myCrushDate != nil) { // The crushDate previously stored
-                    //print(bvc.birthday > myCrushDate!)
-                    if (bvc.birthday > myCrushDate!){ // Compared with the curent crush date
-                        let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
-                        present(alert, animated: true)
-                    } else {
-                        // The parameters can be well introduced
-                        // If  the date introduced is valid it is stored
-                        myBirthday = bvc.birthday
-                        updateBL()
-                        updatePL()
-                    }
-                } else {
-                    // If  the date introduced is valid it is stored
-                    myBirthday = bvc.birthday
-                    updateBL()
-                    updatePL()
-                }
-            }
-        }
+//        updatePL()
+//        if segue.identifier == "sb ok"{
+//            if let bvc = segue.source as? BirthdayViewController{
+//                // You cannnot be born in the future
+//                if bvc.birthday > Date(){
+//                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
+//                    present(alert, animated: true)
+//                }
+//                // You cannot crush before been born
+//                if (myCrushDate != nil) { // The crushDate previously stored
+//                    //print(bvc.birthday > myCrushDate!)
+//                    if (bvc.birthday > myCrushDate!){ // Compared with the curent crush date
+//                        let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+//                        alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+//                        present(alert, animated: true)
+//                    } else {
+//                        // The parameters can be well introduced
+//                        // If  the date introduced is valid it is stored
+//                        myBirthday = bvc.birthday
+//                        updateBL()
+//                        updatePL()
+//                    }
+//                } else {
+//                    // If  the date introduced is valid it is stored
+//                    myBirthday = bvc.birthday
+//                    updateBL()
+//                    updatePL()
+//                }
+//            }
+//        }
         if segue.identifier == "sb cancel"{
             
         }

@@ -69,7 +69,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRy-Me-blB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fiestaMN" translatesAutoresizingMaskIntoConstraints="NO" id="ZRy-Me-blB">
                                 <rect key="frame" x="67" y="347" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -213,4 +213,7 @@
             <point key="canvasLocation" x="710" y="464"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fiestaMN" width="232" height="232"/>
+    </resources>
 </document>

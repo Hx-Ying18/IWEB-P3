@@ -31,9 +31,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Prepare for segue so to store the value that give the datepicker
+    // Prepare for segue so to store the value that is given in the datepicker
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        // If myBirthday is not nil, it gives its value to the segue
+        if segue.identifier=="Select birthday"{
+            if(myBirthday != nil ){
+                guard let bvc = segue.source as? BirthdayViewController else { return }
+                bvc.birthday = myBirthday!
+            }
+        }
+        if segue.identifier=="Select crush date"{
+            if(myCrushDate != nil ){
+                guard let cvc = segue.source as? CrushDateViewController else { return }
+                cvc.crushDate = myCrushDate!
+            }
+        }
     }
     
     // Depending on the segue identifier, either the date on the label or not

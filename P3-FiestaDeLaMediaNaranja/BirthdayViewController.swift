@@ -13,6 +13,9 @@ class BirthdayViewController: UIViewController {
     // It is initialized with the current value
     var birthday: Date = Date()
     
+    //Callback closure
+    var cb: ((Date) -> ())?
+    
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
     
@@ -49,7 +52,8 @@ class BirthdayViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "sb ok"{
-            birthday = birthdayPicker.date
+            //birthday = birthdayPicker.date
+            cb?(birthdayPicker.date)
         }
         if segue.identifier == "sb cancel"{
             // Do nothing, but dismiss

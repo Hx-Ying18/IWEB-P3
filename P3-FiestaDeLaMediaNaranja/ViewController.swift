@@ -35,10 +35,21 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If myBirthday is not nil, it gives its value to the segue
         if segue.identifier=="Select birthday"{
-            if(myBirthday != nil ){
-                guard let bvc = segue.destination as? BirthdayViewController else { return }
-                bvc.birthday = myBirthday!
+//            if(myBirthday != nil ){
+//                guard let bvc = segue.destination as? BirthdayViewController else { return }
+//                bvc.birthday = myBirthday!
+//            }
+            if let bvc = segue.destination as? BirthdayViewController{
+                if let b = myBirthday{
+                    bvc.birthday = b
+                }
+                // Hacerlo con closures
+                bvc.b = { (date:Date) -> () in
+                    self.myBirthday = date
+                    self.updateBL()
+                }
             }
+            
         }
         if segue.identifier=="Select crush date"{
             if(myCrushDate != nil ){

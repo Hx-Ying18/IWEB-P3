@@ -53,12 +53,6 @@ class ViewController: UIViewController {
         updatePL()
         if segue.identifier == "sb ok"{
             if let bvc = segue.source as? BirthdayViewController{
-                // You cannnot be born in the future
-                if bvc.birthday > Date(){
-                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
-                    present(alert, animated: true)
-                }
                 // You cannot crush before been born
                 if (myCrushDate != nil) { // The crushDate previously stored
                     //print(bvc.birthday > myCrushDate!)

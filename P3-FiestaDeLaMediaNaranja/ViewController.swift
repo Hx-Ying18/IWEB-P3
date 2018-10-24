@@ -65,36 +65,7 @@ class ViewController: UIViewController {
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
         if segue.identifier == "sb ok"{ updatePL() }
         if segue.identifier == "sb cancel"{}
-        if segue.identifier == "sc ok" {
-//            if let cvc = segue.source as? CrushDateViewController{
-//                // You cannot crush in the future
-//                if cvc.crushDate > Date(){
-//                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento forma parte del futuro", preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
-//                    present(alert, animated: true)
-//                }
-//
-//                // You cannot crush before been born
-//                if (myBirthday != nil) { // The birthday previously stored
-//                    if (myBirthday! > cvc.crushDate){ // COmpared with the curent crush date
-//                        let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
-//                        present(alert, animated: true)
-//                    } else {
-//                        // Param can be well introduced
-//                        //If  the date introduced is valid it is stored
-//                        myCrushDate = cvc.crushDate
-//                        updateCL()
-//                        updatePL()
-//                    }
-//                } else {
-//                    //If  the date introduced is valid it is tored
-//                    myCrushDate = cvc.crushDate
-//                    updateCL()
-//                    updatePL()
-//                }
-//            }
-        }
+        if segue.identifier == "sc ok" { updatePL() }
         if segue.identifier == "sc cancel"{
             
         }

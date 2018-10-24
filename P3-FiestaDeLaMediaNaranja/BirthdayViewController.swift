@@ -44,8 +44,8 @@ class BirthdayViewController: UIViewController {
         if identifier == "sb ok"{
             // You cannnot be born in the future
             if birthdayPicker.date > Date(){
-                let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("Fecha de nacimiento en el futuro")}))
+                let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: fecha de nacimiento en el futuro", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
                 present(alert, animated: true)
                 return false // Not to do the segue
             }

@@ -35,6 +35,37 @@ class CrushDateViewController: UIViewController {
     
     // MARK: - Navigation
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        if identifier == "sc ok"{
+            // You cannnot be born in the future
+            if crushDatePicker.date > Date(){
+                let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: fecha de enamoramiento en el futuro", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                present(alert, animated: true)
+                return false // Not to do the segue
+            }
+            if let lastBirthday = defaults.object(forKey: "lastBirthdayStored") as? Date{
+                // You cannot crush before been born
+                if (lastBirthday > crushDatePicker.date){ // Compared with the curent crush date
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                    present(alert, animated: true)
+                    return false
+                }else{
+                    return true
+                }
+            }
+            return true
+        }
+        if identifier=="sc cancel"{
+            return true
+        }
+        
+        // In other unexpected cases
+        return true
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

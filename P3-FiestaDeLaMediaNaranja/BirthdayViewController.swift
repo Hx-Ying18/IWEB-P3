@@ -79,8 +79,9 @@ class BirthdayViewController: UIViewController {
             birthday = birthdayPicker.date
             
             // If well it stores there
-            let defaults = UserDefaults.standard
             defaults.set(birthday, forKey: "lastBirthdayStored")
+            // Otherwise it will be tored whenever it wants
+            defaults.synchronize()
         }
         if segue.identifier == "sb cancel"{
             // Do nothing, but dismiss

@@ -71,8 +71,8 @@ class CrushDateViewController: UIViewController {
         
         if segue.identifier=="sc ok"{
             crushDate = crushDatePicker.date
-            let defaults = UserDefaults.standard
             defaults.set(crushDate, forKey: "lastCrushDateStored")
+            defaults.synchronize()
         }
         if segue.identifier=="sc cancel"{
             

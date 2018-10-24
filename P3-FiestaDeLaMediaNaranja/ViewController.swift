@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         }
 
         updatePL()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,12 +62,28 @@ class ViewController: UIViewController {
     
     // Depending on the segue identifier, either the date on the label or not
     @IBAction func goHome(_ segue: UIStoryboardSegue) {
-        if segue.identifier == "sb ok"{ updatePL() }
-        if segue.identifier == "sb cancel"{}
-        if segue.identifier == "sc ok" { updatePL() }
-        if segue.identifier == "sc cancel"{
-            
+        if segue.identifier == "sb ok"{
+            // If already stored one
+            if let lastBirthday = defaults.object(forKey: "lastBirthdayStored") as? Date{
+                myBirthday = lastBirthday
+                updateBL()
+            }
+            // print(birthdayLabel.text ?? "Empty yet")
+            updatePL()
+            // print(partyDateLabel.text ?? "Empty yet")
+
         }
+        if segue.identifier == "sb cancel"{}
+        if segue.identifier == "sc ok" {
+            // If already stored one
+            if let lastCrushDate = defaults.object(forKey: "lastCrushDateStored") as? Date{
+                myCrushDate = lastCrushDate
+                updateCL()
+            }
+            updatePL()
+
+        }
+        if segue.identifier == "sc cancel"{}
         
         
     }

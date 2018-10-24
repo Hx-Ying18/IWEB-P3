@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     var myBirthday: Date?
     var myCrushDate: Date?
     
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var crushDateLabel: UILabel!
     @IBOutlet weak var partyDateLabel: UILabel!
@@ -20,10 +22,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // It initialize the values of myBirthday if are stored in userdefault
+
+        // If already stored one
+        if let lastBirthday = defaults.object(forKey: "lastBirthdayStored") as? Date{
+            myBirthday = lastBirthday
+            updateBL()
+        }
+        // If already stored one
+        if let lastCrushDate = defaults.object(forKey: "lastCrushDateStored") as? Date{
+            myCrushDate = lastCrushDate
+            updateCL()
+        }
+
         updatePL()
-        partyDateLabel.setNeedsDisplay()
-        birthdayLabel.setNeedsDisplay()
-        crushDateLabel.setNeedsDisplay()
+        
     }
 
     override func didReceiveMemoryWarning() {

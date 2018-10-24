@@ -13,12 +13,20 @@ class BirthdayViewController: UIViewController {
     // It is initialized with the current value
     var birthday: Date = Date()
     
+    let defaults = UserDefaults.standard
+    
+    
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // If already stored one
+        if let lastBirthday = defaults.object(forKey: "lastBirthdayStored") as? Date{
+            birthday = lastBirthday
+        }
+        
         // By default is loaded this value in datePicker
         birthdayPicker.date = birthday
     }
@@ -50,6 +58,10 @@ class BirthdayViewController: UIViewController {
         
         if segue.identifier == "sb ok"{
             birthday = birthdayPicker.date
+            
+            // If well it stores there
+            let defaults = UserDefaults.standard
+            defaults.set(birthday, forKey: "lastBirthdayStored")
         }
         if segue.identifier == "sb cancel"{
             // Do nothing, but dismiss

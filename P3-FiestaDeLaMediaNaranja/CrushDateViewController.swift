@@ -13,11 +13,17 @@ class CrushDateViewController: UIViewController {
     // Today by default
     var crushDate: Date = Date()
     
+    let defaults = UserDefaults.standard
+    
     @IBOutlet weak var crushDatePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let lastCrushDate = defaults.object(forKey: "lastCrushDateStored") as? Date{
+            crushDate = lastCrushDate
+        }
+        
         // Every time it reload it load the crushDate
         crushDatePicker.date = crushDate
     }
@@ -34,6 +40,8 @@ class CrushDateViewController: UIViewController {
         
         if segue.identifier=="sc ok"{
             crushDate = crushDatePicker.date
+            let defaults = UserDefaults.standard
+            defaults.set(crushDate, forKey: "lastCrushDateStored")
         }
         if segue.identifier=="sc cancel"{
             

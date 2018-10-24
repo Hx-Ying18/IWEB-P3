@@ -49,9 +49,28 @@ class BirthdayViewController: UIViewController {
                 present(alert, animated: true)
                 return false // Not to do the segue
             }
+            if let lastCrushDate = defaults.object(forKey: "lastCrushDateStored") as? Date{
+                // You cannot crush before been born
+                if (birthdayPicker.date > lastCrushDate){ // Compared with the curent crush date
+                    let alert = UIAlertController(title: "Error", message: "Bájate del DeLorean: tu fecha de enamoramiento es previa a la de nacimiento", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title:"ok", style:.default, handler: {(aa :UIAlertAction) in print("")}))
+                    present(alert, animated: true)
+                    return false
+                }else{
+                    return true
+                }
+            }
+            return true
         }
-        return true
+        if identifier == "sb cancel"{
+            // it it goes by another identifier
+            return true
+        }
+        // For other identifiers
+        return false
     }
+    
+    
     
     // If it is selector birthday ok (sb ok), stores the value in birthday. If not do nothing
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

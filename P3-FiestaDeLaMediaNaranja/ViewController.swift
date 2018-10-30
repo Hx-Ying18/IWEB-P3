@@ -124,6 +124,7 @@ class ViewController: UIViewController {
     
     //If tehre has been introduced the dates it show the party date
     func updatePL() {
+       
         // print((myBirthday != nil) && (myCrushDate != nil))
         if (myBirthday != nil) && (myCrushDate != nil){
             let calendar = Calendar.current
@@ -135,6 +136,12 @@ class ViewController: UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-YYYY"
             partyDateLabel.text = "Apunta este día: " + dateFormatter.string(from: dateMN!)
+            
+            // Code to add a day
+            //let seconds = 60*60*24
+            //let interval : TimeInterval = Date(seconds)
+            //typealias TimeInterval = Double(seconds)
+            //let dateMNgood = dateMN?.dateByAddingTimeInterval(TimeInterval: interval )
         }
         
     }
